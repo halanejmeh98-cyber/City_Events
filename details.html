@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-key="details_page_html_title">City Events Guide - Event Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body class="container-fluid p-0">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/cityevents-logo.png" alt="City Events Guide Logo" height="100" class="d-inline-block align-text-top me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html" data-key="nav_home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html" data-key="nav_events">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html" data-key="nav_about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html" data-key="nav_contact">Contact</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="lang-switcher">EN/AR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <div id="event-details-content">
+            
+            <div class="row mb-4">
+                <div class="col-12">
+                    <img id="event-image" src="images/placeholder.jpg" class="img-fluid rounded shadow" alt="Event Banner" style="max-height: 400px; width: 100%; object-fit: cover;">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 id="event-title" class="display-4 text-primary mb-3"></h1>
+                    <p id="event-description" class="lead text-muted mb-4"></p>
+                    
+                    <div class="mb-4">
+                        <a href="#" id="book-tickets-btn" class="btn btn-success btn-lg me-3" data-key="book_tickets_button">Book Tickets Now</a>
+                        <a href="#" id="watch-promo-btn" target="_blank" class="btn btn-outline-danger btn-lg" data-key="watch_promo_button">Watch Promo on YouTube</a>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="mb-5 d-flex align-items-center">
+                        <a href="#" class="btn btn-outline-warning me-3" data-key="add_to_calendar">📅 Add to Calendar</a>
+                        <span class="text-muted me-3 fw-bold" data-key="share_text">Share:</span>
+                        <a href="#" class="btn btn-sm btn-outline-dark me-1" data-key="share_facebook">FB</a>
+                        <a href="#" class="btn btn-sm btn-outline-dark me-1" data-key="share_twitter">X</a>
+                        <a href="#" class="btn btn-sm btn-outline-dark" data-key="share_email">Email</a>
+                    </div>
+                    <section class="mb-5">
+                        <h2 class="text-secondary mb-3" data-key="event_about_title">About the Event</h2>
+                        <p id="event-about-text1"></p>
+                        <p id="event-about-text2"></p>
+                    </section>
+
+                    <section class="mb-5">
+                        <div id="map-container" class="card p-4 bg-light text-center">
+                            <div id="map" style="height: 400px; width: 100%;"></div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card p-4 bg-light sticky-top" style="top: 20px;">
+                        <h4 class="card-title mb-4 text-center" data-key="event_quick_facts_title">Event Quick Facts</h4>
+                        
+                        <ul class="list-unstyled">
+                            <li class="d-flex justify-content-between mb-3 align-items-center">
+                                <span class="fw-bold text-danger me-2" data-key="card_date">🗓️ Date:</span>
+                                <span id="event-date-display" class="text-end"></span>
+                            </li>
+                            <li class="d-flex justify-content-between mb-3">
+                                <span class="fw-bold text-primary me-2" data-key="card_location">📍 Location:</span>
+                                <span id="event-location-display" class="text-end"></span>
+                            </li>
+                            <li class="d-flex justify-content-between mb-3">
+                                <span class="fw-bold text-info me-2" data-key="card_category">🏷️ Category:</span>
+                                <span class="text-end" id="event-category-display"></span>
+                            </li>
+                            <li class="d-flex justify-content-between mb-3">
+                                <span class="fw-bold text-success me-2" data-key="card_price_label">💲 Price:</span>
+                                <span id="event-price-display" class="text-end"></span>
+                            </li>
+                        </ul>
+                        
+                        <hr>
+                        
+                        <a href="contact.html" class="btn btn-outline-secondary mt-3" data-key="contact_organizer_button">Contact Organizer</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mt-5">
+            <section class="mt-5 mb-5">
+                <h2 class="text-center mb-4" data-key="related_events_title">Related Events You Might Like</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4" id="related-events-list">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="images/related-event-1.jpg" class="card-img-top" alt="Related Event 1" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fs-6">Culture Night 🎭</h5>
+                                <p class="card-text"><small class="text-muted">Oct 20, City Hall</small></p>
+                                <a href="details.html?id=4" class="btn btn-sm btn-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="images/related-event-2.jpg" class="card-img-top" alt="Related Event 2" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fs-6">Tech Conference 💻</h5>
+                                <p class="card-text"><small class="text-muted">Nov 5, Expo Center</small></p>
+                                <a href="details.html?id=5" class="btn btn-sm btn-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="images/related-event-3.jpg" class="card-img-top" alt="Related Event 3" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fs-6">Family Zoo Day 🦒</h5>
+                                <p class="card-text"><small class="text-muted">Dec 1, City Zoo</small></p>
+                                <a href="details.html?id=6" class="btn btn-sm btn-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="event-not-found" class="alert alert-danger text-center mt-5" style="display:none;" data-key="event_not_found">Event not found.</div>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1" data-key="footer_rights">&copy; 2025 City Events Guide. All rights reserved.</p>
+            
+            <p class="mb-1">
+                <span data-key="footer_contact_text">Contact us:</span>
+                <a href="mailto:info@cityevents.com" class="text-info">info@cityevents.com</a>
+            </p>
+            
+            <p>
+                <span data-key="footer_follow_text">Follow us:</span>
+                <a href="#" class="text-info me-2">Facebook</a>|
+                <a href="#" class="text-info me-2">Twitter</a>|
+                <a href="#" class="text-info">Instagram</a>
+            </p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="js/localization.js"></script>
+    <script src="js/eventData.js"></script>
+    
+    <script>
+    
+    function renderRelatedEvents(relatedEvents) {
+        const relatedList = document.getElementById('related-events-list'); 
+        if (!relatedList) return;
+
+        relatedList.innerHTML = ''; 
+        const lang = localStorage.getItem('lang') || 'en';
+        
+        if (relatedEvents.length === 0) {
+            relatedList.innerHTML = `<div class="col-12 text-center"><p class="text-muted" data-key="no_related_events">No related events found in the same category.</p></div>`;
+            if (typeof translatePage === 'function') { translatePage(lang); }
+            return;
+        }
+
+        relatedEvents.slice(0, 3).forEach(event => { 
+            const eventTitle = event.title[lang] || event.title.en;
+            const eventLocation = event.location[lang] || event.location.en;
+
+            const col = document.createElement('div');
+            col.className = 'col';
+            
+            col.innerHTML = `
+                <div class="card h-100 shadow-sm">
+                    <img src="${event.image}" class="card-img-top" alt="${eventTitle}" style="height: 150px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title fs-6">${eventTitle}</h5>
+                        <p class="card-text"><small class="text-muted">${event.date}, ${eventLocation}</small></p>
+                        <a href="details.html?id=${event.id}" class="btn btn-sm btn-primary" data-key="view_details_button">Details</a>
+                    </div>
+                </div>
+            `;
+            relatedList.appendChild(col);
+        });
+        
+        if (typeof translatePage === 'function') { translatePage(lang); }
+    }
+
+    function initMap(lat, lng) {
+        const mapElement = document.getElementById('map');
+        if (!mapElement) return;
+
+
+        if (mapElement._leaflet_id) { 
+             L.map(mapElement).remove(); 
+        }
+
+
+        const map = L.map('map').setView([lat, lng], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+
+        L.marker([lat, lng]).addTo(map)
+            .bindPopup('Event Location')
+            .openPopup();
+    }
+
+    function loadEventDetails() {
+
+        if (typeof events === 'undefined') return;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventId = parseInt(urlParams.get('id'));
+
+        const mainEvent = events.find(e => e.id === eventId);
+
+        if (mainEvent) {
+            const lang = localStorage.getItem('lang') || 'en';
+            
+
+            document.getElementById('event-title').textContent = mainEvent.title[lang] || mainEvent.title.en;
+            document.getElementById('event-description').textContent = mainEvent.description[lang] || mainEvent.description.en;
+            document.getElementById('event-image').src = mainEvent.image;
+            document.getElementById('event-date-display').textContent = mainEvent.date;
+            document.getElementById('event-location-display').textContent = mainEvent.location[lang] || mainEvent.location.en;
+            document.getElementById('event-category-display').textContent = mainEvent.category[lang] || mainEvent.category.en;
+            document.getElementById('event-price-display').textContent = mainEvent.price[lang] || mainEvent.price.en;
+            document.getElementById('event-about-text1').textContent = mainEvent.aboutText1[lang] || mainEvent.aboutText1.en;
+            document.getElementById('event-about-text2').textContent = mainEvent.aboutText2[lang] || mainEvent.aboutText2.en;
+            document.getElementById('book-tickets-btn').href = mainEvent.ticketsLink;
+            document.getElementById('watch-promo-btn').href = mainEvent.promoLink;
+            
+
+            if (mainEvent.latitude && mainEvent.longitude) {
+                initMap(mainEvent.latitude, mainEvent.longitude);
+            }
+            
+
+            const relatedEvents = events.filter(e => 
+                e.rawCategory === mainEvent.rawCategory && 
+                e.id !== mainEvent.id 
+            );
+            
+            renderRelatedEvents(relatedEvents);
+            
+ 
+            if (typeof translatePage === 'function') { translatePage(lang); }
+
+        } else {
+        
+            document.getElementById('event-details-content').style.display = 'none';
+            document.getElementById('event-not-found').style.display = 'block';
+        }
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof initializeLanguage === 'function') {
+            initializeLanguage(); 
+        }
+        loadEventDetails();
+    });
+
+
+    document.addEventListener('languageChanged', loadEventDetails);
+
+    </script>
+    
+    </body>
+</html>
+

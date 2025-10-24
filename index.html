@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-key="index_page_html_title">City Events Guide - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="container-fluid p-0">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/cityevents-logo.png"alt="City Events Guide Logo" height="30" class="d-inline-block align-text-top me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html" data-key="nav_home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html" data-key="nav_events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-key="nav_about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" data-key="nav_contact">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="lang-switcher">EN/AR</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="bg-hero text-center py-5">
+    <div class="container py-5 text-white">
+        <h1 class="display-3" data-key="hero_title">Your City Event Guide</h1>
+        <p class="lead mb-4" data-key="hero_tagline">Discover the best concerts, festivals, and activities near you.</p>
+        <a href="events.html" class="btn btn-warning btn-lg shadow-sm" data-key="explore_events_button">Explore Events</a>
+    </div>
+</section>
+
+<main>
+<section class="container my-5">
+    <h2 class="text-center mb-4" data-key="trending_title">Featured Events This Week</h2>
+    <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner rounded shadow-sm">
+            <div class="carousel-item active">
+                <img src="images/event-music-concert.jpg" class="d-block w-100" alt="City Summer Fest 🎵" style="height: 400px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-top">
+                    <h5 data-key="event1_title">City Summer Fest 🎵</h5>
+                    <p data-key="event1_desc">A three-day music festival featuring local bands.</p>
+                    <a href="details.html?id=1" class="btn btn-sm btn-warning more-details-btn" data-key="view_details_button">View Details</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/food-fair.jpg" class="d-block w-100" alt="International Food Fair 🌮" style="height: 400px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-top">
+                    <h5 data-key="carousel2_title">International Food Fair 🌮</h5>
+                    <p data-key="carousel2_desc">Taste dishes from around the world in one location.</p>
+                    <a href="details.html?id=2" class="btn btn-sm btn-warning more-details-btn" data-key="view_details_button">View Details</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/marathon.jpg" class="d-block w-100" alt="Annual City Marathon 🏃" style="height: 400px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-top">
+                    <h5 data-key="carousel3_title">Annual City Marathon 🏃</h5>
+                    <p data-key="carousel3_desc">Join the biggest race of the year!</p>
+                    <a href="details.html?id=4" class="btn btn-sm btn-warning more-details-btn" data-key="view_details_button">View Details</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section class="container my-5 text-center">
+    <h2 class="mb-4" data-key="upcoming_events_title">Quick Categories</h2>
+    <a href="events.html?category=music" class="btn btn-outline-danger btn-lg m-2" data-key="category_music">🎵 Music</a>
+    <a href="events.html?category=culture" class="btn btn-outline-primary btn-lg m-2" data-key="category_arts">📖 Culture</a>
+    <a href="events.html?category=sports" class="btn btn-outline-success btn-lg m-2" data-key="category_sports">🏃 Sports</a>
+    <a href="events.html?category=food" class="btn btn-outline-warning btn-lg m-2" data-key="category_food">🌮 Food</a>
+    <a href="events.html?category=family" class="btn btn-outline-info btn-lg m-2" data-key="filter_family">👨‍👩‍👧 Family</a>
+</section>
+
+<section class="container my-5">
+    <h2 class="text-center mb-5" data-key="feature_section_title">Why Choose Us?</h2>
+    <div class="row text-center g-4" id="feature-cards-container">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary" data-key="feature1_title">🎉 Unique Events</h5>
+                    <p class="card-text" data-key="feature1_desc">We bring you the most exciting and exclusive city events every week.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-success" data-key="feature2_title">⚡ Easy Experience</h5>
+                    <p class="card-text" data-key="feature2_desc">Find and book events effortlessly with our user-friendly design.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-warning" data-key="feature3_title">🌍 Wide Coverage</h5>
+                    <p class="card-text" data-key="feature3_desc">From concerts to food fairs, we cover all event categories for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container my-5 py-5 bg-primary text-white rounded shadow-lg text-center">
+    <h2 class="mb-3" data-key="cta_secondary_title">Ready to find your next great event?</h2>
+    <p class="lead mb-4" data-key="cta_secondary_subtitle">Browse through hundreds of exciting opportunities happening this month!</p>
+    <a href="events.html" class="btn btn-light btn-lg" data-key="view_events_button">View All Events</a>
+</section>
+</main>
+
+<div class="container-fluid bg-light py-2 text-center border-bottom">
+    <div class="container">
+        <small class="text-muted">
+            <span data-key="contributor_title">**Project Contributors**</span>: 
+            <span class="text-dark fw-bold" data-key="contributor_thaer_name">Thaer Shaarieh</span> (ID: thaer_291821),
+            <span class="text-dark fw-bold" data-key="contributor_hala_name">Hala Nejmeh</span> (ID: hala_274110),
+            <span class="text-dark fw-bold" data-key="contributor_hani_name">Hani Abbas</span> (ID: hani_286646).
+            <span data-key="contributor_course">**Course**</span>: BWP401 | 
+            <span data-key="contributor_instructor">**Instructor**</span>: Dr. Bassel Al-Khateeb
+        </small>
+    </div>
+</div>
+
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <div class="container">
+       <p class="mb-1" data-key="footer_rights">&copy; 2025 City Events Guide. All rights reserved.</p>
+       <p class="mb-1">
+           <span data-key="footer_contact_text">Contact us:</span> 
+           <a href="mailto:info@cityevents.com" class="text-info">info@cityevents.com</a>
+       </p>
+       <p>
+           <span data-key="footer_follow_text">Follow us:</span>
+           <a href="#" class="text-info me-2" data-key="social_facebook">Facebook</a>|
+           <a href="#" class="text-info me-2" data-key="social_twitter">Twitter</a>|
+           <a href="#" class="text-info" data-key="social_instagram">Instagram</a>
+       </p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script src="js/eventData.js"></script>
+<script src="js/localization.js"></script>
+<script>
+    translatePage(currentLang);
+</script>
+<script src="js/filter.js"></script>
+
+</body>
+</html>
+
+
+
+
+
