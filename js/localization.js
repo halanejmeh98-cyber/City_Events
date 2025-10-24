@@ -85,7 +85,7 @@ const translations = {
         "tech_stack_3": "Vanilla JavaScript (for localization and filtering)",
         "contributor_title": "**Project Contributors**",
         "contributor_hala_name": "Hala Nejmeh",
-        "contributor_thaer_name": "Thaer Shaarieh",
+        "contributor_thaer_name": "Thaer Sheryeh",
         "contributor_hani_name": "Hani Abbas",
 
         "contributor_hala_role": "Project Manager & Lead Developer", 
@@ -214,7 +214,7 @@ const translations = {
         "tech_stack_3": "جافاسكريبت فانيلا (للتوطين والتصفية)",
         "contributor_title": "**المساهمون في المشروع**",
         "contributor_hala_name": "هالة نجمة",
-        "contributor_thaer_name": "ثائر الشعارية",
+        "contributor_thaer_name": "ثائر شعيرية",
         "contributor_hani_name": "هاني عباس",
    
         "contributor_hala_role": "مدير المشروع ومطور رئيسي",
